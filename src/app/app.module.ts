@@ -12,6 +12,7 @@ import { User } from '../providers/user';
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { QRScanner } from "@ionic-native/qr-scanner";
 import { AlertProvider } from '../providers/alert/alert';
 
 @NgModule({
@@ -41,7 +42,8 @@ import { AlertProvider } from '../providers/alert/alert';
     StatusBar,
     SplashScreen,
     BarcodeScanner,
-    AlertProvider
+    AlertProvider,
+    QRScanner
   ]
 })
 export class AppModule { }
