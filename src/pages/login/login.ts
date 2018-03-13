@@ -52,7 +52,7 @@ export class LoginPage {
     // To simulate Logging in Server Response
     window.setTimeout(() => {
       this._nav.push(EventListPage);
-    }, 3000);
+    }, 1000);
   }
 
 }

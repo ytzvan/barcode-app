@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let event of events" (click)="scanForEvent(event.id, event.title)">
-      {{event.title}}
+      {{event.title}} - {{event.id}}
     </ion-item>
   </ion-list>
 </ion-content>

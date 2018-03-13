@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { ScanResultPage } from "../scan-result/scan-result.ts";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-scan',
@@ -18,7 +19,8 @@ export class ScanPage {
   constructor(
     private _nav: NavController,
     private _navParams: NavParams,
-    private _barcodeScanner: BarcodeScanner) {
+    private _barcodeScanner: BarcodeScanner,
+    private _iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
@@ -40,9 +42,7 @@ export class ScanPage {
         this.loading = false;
         return false;
       }
-      console.log("Scanned successfully!");
-      console.log(barcodeData);
-      this.goToResult(barcodeData);
+      this.showPage(barcodeData);
     }, (err) => {
       console.log(err);
     });
@@ -50,9 +50,13 @@ export class ScanPage {
 
   private goToResult(barcodeData) {
     console.log(barcodeData);
-    debugger
     this._nav.push(ScanResultPage, {
       scannedText: barcodeData.text
     });
+  }
+
+
+  private showPage(barcodeData) {
+    const browser = this._iab.create(barcodeData.text);
   }
 }
