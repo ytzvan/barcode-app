@@ -1,6 +1,6 @@
 {
   "name": "QRScanner",
-  "app_id": "",
+  "app_id": "c5baecdb",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
