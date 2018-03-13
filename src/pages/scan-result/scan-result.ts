@@ -13,12 +13,16 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ScanResultPage {
   public scannedText: string;
+  public name : string;
+  public tickets : string;
 
   constructor(public navCtrl: NavController, private _navParams: NavParams) {}
 
   ionViewDidEnter() {
     console.log(this._navParams.get("scannedText"));
     this.scannedText = this._navParams.get("scannedText");
+    this.name = this._navParams.get("name");
+    this.tickets = this._navParams.get("people");
   }
 
 }

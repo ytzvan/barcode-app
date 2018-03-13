@@ -1,20 +1,38 @@
+
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Scan Result</ion-title>
+    <ion-title>
+      DateTime
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="outer-content">
 
-<ion-content padding>
-  <ion-row>
-    <ion-col width-100>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col width-100>
-      <h1>{{scannedText}}</h1>
-    </ion-col>
-  </ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-label>Name: {{name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>People: {{tickets}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <button ion-item>
+      <ion-label>Alert</ion-label>
+      <ion-note item-end>None</ion-note>
+    </button>
+  </ion-list>
+
 </ion-content>
+
+<style>
+  ion-list:first-child {
+    margin-top: 32px;
+  }
+  ion-list + ion-list {
+    margin-top: 0;
+  }
+</style>

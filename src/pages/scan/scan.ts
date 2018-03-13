@@ -42,17 +42,26 @@ export class ScanPage {
         this.loading = false;
         return false;
       }
-      this.showPage(barcodeData);
+      this.goToResult(barcodeData);
+
+      // with barcode data, perform query to API and then show result. 
+
     }, (err) => {
       console.log(err);
     });
   }
 
+
+  private getBookingInfo(barcodeData){
+
+  }
   private goToResult(barcodeData) {
-    console.log(barcodeData);
-    this._nav.push(ScanResultPage, {
-      scannedText: barcodeData.text
-    });
+    let bookingInfo = {
+      name : "Ytzvan Mastino",
+      status: 0,
+      people: 2
+    };
+    this._nav.push(ScanResultPage, bookingInfo);
   }
 
 
