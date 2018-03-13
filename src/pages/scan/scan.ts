@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 import { ScanResultPage } from "../scan-result/scan-result.ts";
 
 @Component({
@@ -19,8 +18,7 @@ export class ScanPage {
   constructor(
     private _nav: NavController,
     private _navParams: NavParams,
-    private _barcodeScanner: BarcodeScanner,
-    private _qrScanner: QRScanner) {
+    private _barcodeScanner: BarcodeScanner) {
   }
 
   ionViewDidLoad() {
@@ -35,28 +33,24 @@ export class ScanPage {
     this.buttonText = "Loading..";
     this.loading = true;
 
+    this._barcodeScanner.scan().then((barcodeData) => {
+      if (barcodeData.cancelled) {
+        console.log("User cancelled the action!");
+        this.buttonText = "Scan";
+        this.loading = false;
+        return false;
+      }
+      console.log("Scanned successfully!");
+      console.log(barcodeData);
+      this.goToResult(barcodeData);
+    }, (err) => {
+      console.log(err);
+    });
+  }
 
-    //Add barcode logic here
-
-
-// start scanning
-         let scanSub = this._qrScanner.scan().subscribe((text: string) => {
-           console.log('Scanned something', text);
-
-           this._qrScanner.hide(); // hide camera preview
-           scanSub.unsubscribe(); // stop scanning
-         });
-
-         // show camera preview
-         this._qrScanner.show();
-
-   
-}
-  /*private goToResult(barcodeData) {
+  private goToResult(barcodeData) {
     this._nav.push(ScanResultPage, {
       scannedText: barcodeData.text
     });
-  }*/
+  }
 }
-
-

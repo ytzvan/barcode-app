@@ -22,7 +22,7 @@ export class LoginPage {
     // Create FormControl to validate fields
     this.loginFormControl = new FormGroup({
       email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
     });
   }
 
@@ -40,7 +40,7 @@ export class LoginPage {
 
     let loading = this._loadingController.create({
       content: "Please wait...",
-      duration: 3000
+      duration: 1000
     });
 
     loading.present();

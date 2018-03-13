@@ -17,6 +17,7 @@ export class ScanResultPage {
   constructor(public navCtrl: NavController, private _navParams: NavParams) {}
 
   ionViewDidLoad() {
+    console.log(this._navParams.get("scannedText"));
     this.scannedText = this._navParams.get("scannedText");
   }
 
