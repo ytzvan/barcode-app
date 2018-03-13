@@ -16,8 +16,8 @@ export class EventListPage {
   }
 
   private getEvents() {
-    for (var index = 0; index < 10; index++) {
-      this.events.push({ id: index, title: "Test" + index });
+    for (var index = 0; index < 2; index++) {
+      this.events.push({ id: index, title: "Biomuseo"});
     }
   }
 
