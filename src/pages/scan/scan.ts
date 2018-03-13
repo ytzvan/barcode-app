@@ -49,6 +49,8 @@ export class ScanPage {
   }
 
   private goToResult(barcodeData) {
+    console.log(barcodeData);
+    debugger
     this._nav.push(ScanResultPage, {
       scannedText: barcodeData.text
     });
