@@ -12,7 +12,6 @@ import { User } from '../providers/user';
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
-import { QRScanner } from "@ionic-native/qr-scanner";
 import { AlertProvider } from '../providers/alert/alert';
 import { InAppBrowser } from '@ionic-native/in-app-browser'; 
 
@@ -44,7 +43,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SplashScreen,
     BarcodeScanner,
     AlertProvider,
-    QRScanner,
     InAppBrowser
   ]
 })
