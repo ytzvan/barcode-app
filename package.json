@@ -84,7 +84,7 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-ionic": {
         "APP_ID": "c5baecdb",
-        "CHANNEL_NAME": "Master",
+        "CHANNEL_NAME": "Production",
         "UPDATE_METHOD": "background",
         "WARN_DEBUG": "true",
         "UPDATE_API": "https://api.ionicjs.com",
