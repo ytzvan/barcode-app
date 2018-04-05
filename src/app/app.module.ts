@@ -14,6 +14,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { AlertProvider } from '../providers/alert/alert';
 import { InAppBrowser } from '@ionic-native/in-app-browser'; 
+import { AlertController } from 'ionic-angular';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SplashScreen,
     BarcodeScanner,
     AlertProvider,
-    InAppBrowser
+    InAppBrowser,
+    AlertController
   ]
 })
 export class AppModule { }

@@ -16,27 +16,35 @@ export class ScanResultPage {
   public scannedText: string;
   public name : string;
   public tickets : string;
-  public alertCtrl: AlertController;
 
-  constructor(public navCtrl: NavController, private _navParams: NavParams) {}
+  constructor(public navCtrl: NavController, private _navParams: NavParams, private alertCtrl: AlertController) {}
 
   ionViewDidEnter() {
-    console.log(this._navParams.get("scannedText"));
     this.scannedText = this._navParams.get("scannedText");
     this.name = this._navParams.get("name");
     this.tickets = this._navParams.get("people");
-  }
 
-  public showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'New Friend!',
-      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
-      buttons: ['OK']
-    });
-    alert.present();
   }
-
+  public presentConfirm() {
+  let alert = this.alertCtrl.create({
+    title: 'Confirm purchase',
+    message: 'Do you want to buy this book?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Buy',
+        handler: () => {
+          console.log('Buy clicked');
+        }
+      }
+    ]
+  });
+  alert.present();
 }
-
-
-
+}
