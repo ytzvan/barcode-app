@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 /*
   Generated class for the ScanResult page.
@@ -15,6 +16,7 @@ export class ScanResultPage {
   public scannedText: string;
   public name : string;
   public tickets : string;
+  public alertCtrl: AlertController;
 
   constructor(public navCtrl: NavController, private _navParams: NavParams) {}
 
@@ -25,4 +27,16 @@ export class ScanResultPage {
     this.tickets = this._navParams.get("people");
   }
 
+  public showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'New Friend!',
+      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
 }
+
+
+

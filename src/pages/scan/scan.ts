@@ -38,16 +38,19 @@ export class ScanPage {
     this._barcodeScanner.scan().then((barcodeData) => {
       if (barcodeData.cancelled) {
         console.log("User cancelled the action!");
-        this.buttonText = "Scan";
         this.loading = false;
         return false;
       }
       this.goToResult(barcodeData);
+      this.buttonText = "Scan";
+      this.loading = false;
 
       // with barcode data, perform query to API and then show result. 
 
     }, (err) => {
       console.log(err);
+      this.buttonText = "Scan";
+      this.loading = false;
     });
   }
 
