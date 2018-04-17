@@ -62,7 +62,11 @@ export class ScanPage {
     let bookingInfo = {
       name : "Ytzvan Mastino",
       status: 0,
-      people: 2
+      people: 3,
+      nOfAdults: 2,
+      nOfChildren: 1,
+      nOfInfants: 0,
+      purchaseDate: "Tue Apr 17 2018 13:42:09 GMT-0500 (EST)"
     };
     this._nav.push(ScanResultPage, bookingInfo);
   }

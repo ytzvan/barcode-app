@@ -8,7 +8,7 @@ import { ScanPage } from "../scan/scan";
   templateUrl: 'event-list.html'
 })
 export class EventListPage {
-  public events: Array<{ id: number, title: string }> = [];
+  public events: Array<{ id: number, title: string, description:string }> = [];
   constructor(private _nav: NavController) { }
 
   ionViewDidLoad() {
@@ -17,14 +17,15 @@ export class EventListPage {
 
   private getEvents() {
     for (var index = 0; index < 2; index++) {
-      this.events.push({ id: index, title: "Biomuseo"});
+      this.events.push({ id: index, title: "Biomuseo - Entrada ", description: "Entrada Principal Biomuseo"});
     }
   }
 
-  public scanForEvent(id: number, title: string) {
+  public scanForEvent(id: number, title: string, description: string) {
     this._nav.push(ScanPage, {
       eventId: id,
-      eventTitle: title
+      eventTitle: title,
+      eventDescripion: description
     });
   }
 

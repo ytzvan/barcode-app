@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      DateTime
+      Resultado
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,21 +11,28 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>Name: {{name}}</ion-label>
+      <ion-label>Nombre: {{name}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>People: {{tickets}}</ion-label>
+      <ion-label>Total Tickets: {{tickets}}</ion-label>
     </ion-item>
+    <ion-item>
+      <ion-label>Adultos: {{nOfAdults}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Niños: {{nOfChildren}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Infantes: {{nOfInfants}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha de Compra: {{purchaseDate}}</ion-label>
+    </ion-item>
+    
+      <button ion-button block color="primary" (click)="presentConfirm()" block> Validar entrada</button>
+  
   </ion-list>
-
-
-  <ion-list>
-    <button ion-item>
-      <ion-label>Alert</ion-label>
-      <ion-note item-end>None</ion-note>
-    </button>
-  </ion-list>
-  <button ion-button block color="dark" (click)="presentConfirm()"> Validar entrada</button>
+  
 </ion-content>
 
 <style>

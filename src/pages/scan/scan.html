@@ -1,19 +1,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Scan</ion-title>
+    <ion-title>Escanear Entradas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding class="Scan">
-  <div class="row" style="background-color: transparent;">
+  <div class="row" style="background-color: white;">
     <div class="col">
-      <h2>Scan your QR Code Here</h2>
-    </div>
-    <div class="col">
-      <h3>{{eventTitle}}</h3>
+      <h3>Escanear: {{eventTitle}}</h3>
     </div>
   </div>
-  <button ion-button block color="secondary" class="Scan-button" (click)="scanQR()" [disabled]="loading">{{buttonText}}</button>
+  <button ion-button block color="secondary" class="Scan-button" (click)="scanQR()" [disabled]="loading">Escanear</button>
 </ion-content>
